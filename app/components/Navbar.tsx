@@ -18,7 +18,7 @@ const StyledNav = styled.nav`
 		list-style: none;
 		gap: 7rem;
 	}
-	.logo {
+	.logo a {
 		font-size: 2rem;
 		font-weight: bold;
 		font-style: italic;
