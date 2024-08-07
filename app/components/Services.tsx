@@ -81,7 +81,7 @@ const Card = styled.div`
 			font-size: 1.1rem;
 			background-color: white;
 			color: black;
-			padding: 1rem;
+			padding: 0.5rem 1rem;
 		}
 	}
 `;
