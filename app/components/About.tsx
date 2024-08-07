@@ -1,6 +1,6 @@
 "use client";
+import { Description, Hide, StyledAbout, StyledImage } from "@/styles";
 import Image from "next/image";
-import styled from "styled-components";
 
 const About = () => {
 	return (
@@ -29,31 +29,5 @@ const About = () => {
 		</StyledAbout>
 	);
 };
-const StyledAbout = styled.div`
-	min-height: 90vh;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 5rem 10rem;
-	color: white;
-`;
-const Description = styled.div`
-	flex: 1;
-	padding-right: 5rem;
-	h2 {
-		font-weight: lighter;
-	}
-`;
-const StyledImage = styled.div`
-	flex: 1;
-	overflow: hidden;
-	img {
-		object-fit: cover;
-		width: 100%;
-	}
-`;
-const Hide = styled.div`
-	overflow: hidden;
-`;
 
 export default About;
