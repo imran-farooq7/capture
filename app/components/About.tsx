@@ -1,6 +1,7 @@
 "use client";
 import { Description, Hide, StyledAbout, StyledImage } from "@/styles";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const About = () => {
 	return (
@@ -8,7 +9,7 @@ const About = () => {
 			<Description>
 				<div className="title">
 					<Hide>
-						<h2>I turn your</h2>
+						<motion.h2>I turn your</motion.h2>
 					</Hide>
 					<Hide>
 						<h2>
