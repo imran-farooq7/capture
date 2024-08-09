@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 export const StyledAbout = styled.div`
 	min-height: 90vh;
@@ -14,7 +15,7 @@ export const Description = styled.div`
 		font-weight: lighter;
 	}
 `;
-export const StyledImage = styled.div`
+export const StyledImage = styled(motion.div)`
 	flex: 1;
 	overflow: hidden;
 	img {

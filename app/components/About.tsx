@@ -2,6 +2,7 @@
 import { Description, Hide, StyledAbout, StyledImage } from "@/styles";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { animateImg, animateTitle, fade } from "@/animate";
 
 const About = () => {
 	return (
@@ -9,22 +10,28 @@ const About = () => {
 			<Description>
 				<div className="title">
 					<Hide>
-						<motion.h2>I turn your</motion.h2>
+						<motion.h2 variants={animateTitle} initial="hidden" animate="show">
+							I turn your
+						</motion.h2>
 					</Hide>
 					<Hide>
-						<h2>
+						<motion.h2 variants={animateTitle} initial="hidden" animate="show">
 							<span>designs</span> into
-						</h2>
+						</motion.h2>
 					</Hide>
 					<Hide>
-						<h2>reality</h2>
+						<motion.h2 variants={animateTitle} initial="hidden" animate="show">
+							reality
+						</motion.h2>
 					</Hide>
 				</div>
-				<p>Contact me for any type frontend developement</p>
-				<button>Contact Me</button>
+				<motion.p variants={fade}>
+					Contact for responsive and modern frontend developement
+				</motion.p>
+				<motion.button variants={fade}>Contact Me</motion.button>
 			</Description>
 
-			<StyledImage>
+			<StyledImage variants={animateImg} initial="hidden" animate="show">
 				<Image src={"/Home1.jpg"} width={500} height={500} alt="me" />
 			</StyledImage>
 		</StyledAbout>
