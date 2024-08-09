@@ -55,3 +55,14 @@ export const animateImg = {
 		},
 	},
 };
+export const animateLine = {
+	hidden: {
+		width: "0%",
+	},
+	show: {
+		width: "100%",
+		transition: {
+			duration: 1,
+		},
+	},
+};

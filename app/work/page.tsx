@@ -1,5 +1,5 @@
 "use client";
-import { animatePage } from "@/animate";
+import { animateImg, animateLine, animatePage, fade } from "@/animate";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -14,10 +14,12 @@ const WorkPage = () => {
 			style={{ background: "white" }}
 		>
 			<Web>
-				<h2>Music Player</h2>
-				<div className="line"></div>
+				<motion.h2 variants={fade}>Music Player</motion.h2>
+				<motion.div variants={animateLine} className="line"></motion.div>
 				<Link href="https://waves-sand.vercel.app/" target="_blank">
-					<Image src={"/player.png"} width={800} height={200} alt="player" />
+					<motion.div variants={animateImg}>
+						<Image src={"/music.jpg"} width={800} height={100} alt="player" />
+					</motion.div>
 				</Link>
 			</Web>
 			<Web>
@@ -45,13 +47,12 @@ const Work = styled(motion.div)`
 const Web = styled.div`
 	padding-bottom: 10rem;
 	.line {
-		height: 0.5rem;
-		background-color: #cccccc;
+		height: 0.4rem;
 		margin-bottom: 3rem;
 	}
 	img {
 		width: 100%;
-		height: 80vh;
+		height: 50vh;
 		object-fit: cover;
 	}
 `;
