@@ -1,11 +1,18 @@
 "use client";
+import { animatePage } from "@/animate";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
 
 const WorkPage = () => {
 	return (
-		<Work>
+		<Work
+			variants={animatePage}
+			initial="hidden"
+			animate="show"
+			style={{ background: "white" }}
+		>
 			<Web>
 				<h2>Music Player</h2>
 				<div className="line"></div>
@@ -30,7 +37,7 @@ const WorkPage = () => {
 		</Work>
 	);
 };
-const Work = styled.div`
+const Work = styled(motion.div)`
 	min-height: 100vh;
 	overflow: hidden;
 	padding: 5rem 10rem;
