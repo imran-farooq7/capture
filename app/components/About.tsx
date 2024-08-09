@@ -3,6 +3,7 @@ import { Description, Hide, StyledAbout, StyledImage } from "@/styles";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { animateImg, animateTitle, fade } from "@/animate";
+import Wave from "./Wave";
 
 const About = () => {
 	return (
@@ -34,6 +35,7 @@ const About = () => {
 			<StyledImage variants={animateImg} initial="hidden" animate="show">
 				<Image src={"/Home1.jpg"} width={500} height={500} alt="me" />
 			</StyledImage>
+			<Wave />
 		</StyledAbout>
 	);
 };

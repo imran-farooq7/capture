@@ -16,6 +16,7 @@ export const Description = styled.div`
 	}
 `;
 export const StyledImage = styled(motion.div)`
+	z-index: 2;
 	flex: 1;
 	overflow: hidden;
 	img {
