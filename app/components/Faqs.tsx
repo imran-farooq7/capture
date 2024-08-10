@@ -1,6 +1,7 @@
 "use client";
 import { StyledAbout } from "@/styles";
 import styled from "styled-components";
+import Toggle from "./Toggle";
 
 const Faq = () => {
 	return (
@@ -8,51 +9,51 @@ const Faq = () => {
 			<h2>
 				Any Question <span>FAQ</span>
 			</h2>
-			<div className="question">
-				<h4>How Do I Start</h4>
-				<div className="answer">
-					<p>Lorem ipsum dolor sit amet.</p>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
-						autem accusamus ex laboriosam porro, adipisci quam voluptatum magnam
-						placeat corporis.
-					</p>
+			<Toggle title="How Do I Start">
+				<div className="question">
+					<div className="answer">
+						<p>Lorem ipsum dolor sit amet.</p>
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi
+							autem accusamus ex laboriosam porro, adipisci quam voluptatum
+							magnam placeat corporis.
+						</p>
+					</div>
 				</div>
-				<div className="faq-line"></div>
-			</div>
-			<div className="question">
-				<h4>Tech Stack</h4>
-				<div className="answer">
-					<p>Lorem ipsum dolor sit amet.</p>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
-						totam.
-					</p>
+			</Toggle>
+			<Toggle title="Tech Stack">
+				<div className="question">
+					<div className="answer">
+						<p>Lorem ipsum dolor sit amet.</p>
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+							totam.
+						</p>
+					</div>
 				</div>
-				<div className="faq-line"></div>
-			</div>
-			<div className="question">
-				<h4>Diferrent Payment Methods</h4>
-				<div className="answer">
-					<p>Lorem ipsum dolor sit amet.</p>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
-						totam.
-					</p>
+			</Toggle>
+			<Toggle title="Differrent Payment Methods">
+				<div className="question">
+					<div className="answer">
+						<p>Lorem ipsum dolor sit amet.</p>
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+							totam.
+						</p>
+					</div>
 				</div>
-				<div className="faq-line"></div>
-			</div>
-			<div className="question">
-				<h4>What Products do you offer.</h4>
-				<div className="answer">
-					<p>Lorem ipsum dolor sit amet.</p>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
-						totam.
-					</p>
+			</Toggle>
+			<Toggle title="What Products do you offer">
+				<div className="question">
+					<div className="answer">
+						<p>Lorem ipsum dolor sit amet.</p>
+						<p>
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error,
+							totam.
+						</p>
+					</div>
 				</div>
-				<div className="faq-line"></div>
-			</div>
+			</Toggle>
 		</FAQS>
 	);
 };
