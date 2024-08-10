@@ -13,7 +13,7 @@ const useScroll = () => {
 			control.start("hidden");
 		}
 	}, [control, inView]);
-	return { ref, control };
+	return { ref: ref, control: control };
 };
 
 export default useScroll;

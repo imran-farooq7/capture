@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components";
+import useScroll from "@/hooks/useScroll";
 
 const WorkPage = () => {
+	const { ref, control } = useScroll();
+	const { ref: ref2, control: control2 } = useScroll();
 	return (
 		<Work
 			variants={animatePage}
@@ -15,23 +18,43 @@ const WorkPage = () => {
 		>
 			<Web>
 				<motion.h2 variants={fade}>Music Player</motion.h2>
-				<motion.div variants={animateLine} className="line"></motion.div>
+				<motion.div
+					variants={animateLine}
+					initial="hidden"
+					animate="show"
+					className="line"
+				></motion.div>
 				<Link href="https://waves-sand.vercel.app/" target="_blank">
 					<motion.div variants={animateImg}>
 						<Image src={"/music.jpg"} width={800} height={100} alt="player" />
 					</motion.div>
 				</Link>
 			</Web>
-			<Web>
+			<Web variants={animateLine} animate={control} ref={ref} initial="hidden">
 				<h2>Shortly</h2>
-				<div className="line"></div>
+				<motion.div
+					variants={animateLine}
+					initial="hidden"
+					animate="show"
+					className="line"
+				></motion.div>
 				<Link href="https://shorty-seven.vercel.app/" target="_blank">
 					<Image src={"/shorten.png"} width={800} height={200} alt="player" />
 				</Link>
 			</Web>
-			<Web>
+			<Web
+				variants={animateLine}
+				animate={control2}
+				ref={ref2}
+				initial="hidden"
+			>
 				<h2>Shop Ease</h2>
-				<div className="line"></div>
+				<motion.div
+					variants={animateLine}
+					initial="hidden"
+					animate="show"
+					className="line"
+				></motion.div>
 				<Link href={"https://shopease-yt.vercel.app/"} target="_blank">
 					<Image src={"/shop.png"} width={800} height={200} alt="player" />
 				</Link>
@@ -44,11 +67,12 @@ const Work = styled(motion.div)`
 	overflow: hidden;
 	padding: 5rem 10rem;
 `;
-const Web = styled.div`
+const Web = styled(motion.div)`
 	padding-bottom: 10rem;
 	.line {
 		height: 0.4rem;
 		margin-bottom: 3rem;
+		background-color: #1feca4;
 	}
 	img {
 		width: 100%;
