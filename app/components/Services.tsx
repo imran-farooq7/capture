@@ -1,15 +1,24 @@
 "use client";
-import { LuAlarmClock } from "react-icons/lu";
+import { fade } from "@/animate";
+import { Description, StyledAbout } from "@/styles";
+import Image from "next/image";
 import { GiDoubleDiaphragm } from "react-icons/gi";
+import { LuAlarmClock } from "react-icons/lu";
 import { MdAttachMoney } from "react-icons/md";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
-import Image from "next/image";
-import { Description, StyledAbout, StyledImage } from "@/styles";
 import styled from "styled-components";
+import useScroll from "@/hooks/useScroll";
 
 const Services = () => {
+	const { ref, control } = useScroll();
+
 	return (
-		<StyledServices>
+		<StyledServices
+			variants={fade}
+			initial={"hidden"}
+			ref={ref}
+			animate={control}
+		>
 			<Description>
 				<h2>
 					High <span>quality</span> web development services

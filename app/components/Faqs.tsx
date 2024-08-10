@@ -1,11 +1,14 @@
 "use client";
+import { fade } from "@/animate";
 import { StyledAbout } from "@/styles";
 import styled from "styled-components";
+import useScroll from "@/hooks/useScroll";
 import Toggle from "./Toggle";
 
 const Faq = () => {
+	const { ref, control } = useScroll();
 	return (
-		<FAQS>
+		<FAQS variants={fade} initial={"hidden"} ref={ref} animate={control}>
 			<h2>
 				Any Question <span>FAQ</span>
 			</h2>
