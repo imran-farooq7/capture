@@ -1,5 +1,7 @@
 "use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styled from "styled-components";
 const StyledNav = styled.nav`
 	min-height: 10vh;
@@ -24,8 +26,17 @@ const StyledNav = styled.nav`
 		font-style: italic;
 	}
 `;
+const Line = styled(motion.div)`
+	height: 0.3rem;
+	background: #23d997;
+	width: 0%;
+	position: absolute;
+	bottom: -80%;
+	left: 60%;
+`;
 
 const Navbar = () => {
+	const pathName = usePathname();
 	return (
 		<StyledNav>
 			<h1 className="logo">
@@ -36,10 +47,24 @@ const Navbar = () => {
 					<Link href={"/"}>About us</Link>
 				</li>
 				<li>
-					<Link href={"/"}>Our work</Link>
+					<Link href={"/work"}>Our work</Link>
+					{pathName === "/" && (
+						<Line
+							initial={{ width: 0 }}
+							exit={{ width: 0 }}
+							animate={{ width: "50%" }}
+						/>
+					)}
 				</li>
 				<li>
-					<Link href={"/"}>Contact us</Link>
+					<Link href={"/contact"}>Contact us</Link>
+					{pathName === "/contact" && (
+						<Line
+							initial={{ width: 0 }}
+							exit={{ width: 0 }}
+							animate={{ width: "50%" }}
+						/>
+					)}
 				</li>
 			</ul>
 		</StyledNav>
