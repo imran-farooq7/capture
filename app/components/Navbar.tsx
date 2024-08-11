@@ -15,6 +15,9 @@ const StyledNav = styled.nav`
 		color: white;
 		text-decoration: none;
 	}
+	li {
+		position: relative;
+	}
 	ul {
 		display: flex;
 		list-style: none;
@@ -27,12 +30,12 @@ const StyledNav = styled.nav`
 	}
 `;
 const Line = styled(motion.div)`
-	height: 0.3rem;
+	height: 0.1rem;
 	background: #23d997;
 	width: 0%;
 	position: absolute;
-	bottom: -80%;
-	left: 60%;
+	bottom: -30%;
+	/* left: 60%; */
 `;
 
 const Navbar = () => {
@@ -45,14 +48,21 @@ const Navbar = () => {
 			<ul>
 				<li>
 					<Link href={"/"}>About us</Link>
-				</li>
-				<li>
-					<Link href={"/work"}>Our work</Link>
 					{pathName === "/" && (
 						<Line
 							initial={{ width: 0 }}
 							exit={{ width: 0 }}
-							animate={{ width: "50%" }}
+							animate={{ width: "100%" }}
+						/>
+					)}
+				</li>
+				<li>
+					<Link href={"/work"}>Our work</Link>
+					{pathName === "/work" && (
+						<Line
+							initial={{ width: 0 }}
+							exit={{ width: 0 }}
+							animate={{ width: "100%" }}
 						/>
 					)}
 				</li>
@@ -62,7 +72,7 @@ const Navbar = () => {
 						<Line
 							initial={{ width: 0 }}
 							exit={{ width: 0 }}
-							animate={{ width: "50%" }}
+							animate={{ width: "100%" }}
 						/>
 					)}
 				</li>
